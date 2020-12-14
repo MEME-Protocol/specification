@@ -13,6 +13,16 @@ Serialisierung und Deserialisierung. Alle Nachrichten werden durch ihren Typ per
 JSON identifiziert. Ist der Typ nicht bekannt oder es fehlen Angaben, wird die
 Nachricht ignoriert.
 
+Damit der Beginn und das Ende der Nachricht erkannt werden kann sind alle
+Nachrichten in folgendem Rahmen aufgeteilt:
+
+```text
+<message size><json>
+```
+
+Die „message size“ gibt die folgende Länge der Nachricht in Bytes an. Sie wird
+als uint 32 übertragen.
+
 ## Register Nachricht
 
 Die `register` Nachricht ist wie folgt aufgebaut.
