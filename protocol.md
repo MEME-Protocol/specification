@@ -41,6 +41,19 @@ Die `register` Nachricht ist wie folgt aufgebaut.
 Der `port` muss hierbei im Wertebereich 50000–60000 liegen. Sonst wird die
 Nachricht ignoriert. Die IP muss korrekt formatiert sein.
 
+## Unregister Nachricht
+
+Möchte sich ein Client abmelden, so wird folgende JSON Nachricht versandt:
+
+```json
+{
+  "type": "unregister",
+  "nickname": "asdf"
+}
+```
+
+Der Server bestätigt den Erhalt durch Schließen der TCP Verbindung.
+
 **Response**
 
 ## User List
@@ -48,20 +61,35 @@ Nachricht ignoriert. Die IP muss korrekt formatiert sein.
 ```json
 {
   "type": "user-list",
-  "users": [
-    {
-      "nickname": "fuck",
-      "ip": "127.0.0.1",
-      "port": 55555
-    },
-    ...
-  ],
+  "users": {
+    "added": [
+      {
+        "nickname": "fuck",
+        "ip": "127.0.0.1",
+        "port": 55555
+      },
+      ...
+    ],
+    "removed": [
+      {
+        "nickname": "asdf"
+      },
+      ...
+    ]
+  }
 }
 ```
 
+**Registration**
+
+Bei der erstmaligen Registrierung werden alle dem Server bekannten User in
+„users-added“ geliefert. „users-removed“ ist hierbei leer.
+
 **Update**
 
-Bei einer Update-Nachricht wird ebenfalls die User List versandt.
+Bei einer Update-Nachricht wird ebenfalls die User List versandt. Es werden
+lediglich die geänderten Clients in jeweils „users-added“ und „users-removed“
+mitgeliefert.
 
 # Kommunikation von Client zu Client
 
