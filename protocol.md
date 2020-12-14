@@ -97,6 +97,10 @@ mitgeliefert.
 
 Datenteil für die Anfrage: "Please talk to me baby on 1234 one more time.".
 
+Der Erhalt wird durch die Öffnung der TCP Verbindung bestätigt. Wird keine
+Verbindung geöffnet, so wird maximal 3 mal die UDP Nachricht versandt, bevor der
+Verbindungsaufbau vollständig abgebrochen wird.
+
 ## Message Communication
 
 ```json
