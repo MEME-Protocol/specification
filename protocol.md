@@ -95,8 +95,9 @@ mitgeliefert.
 
 ## UDP Communication Request
 
-Datenteil für die Anfrage: "Please talk to me baby on 1234 one more time.".
+Datenteil für die Anfrage: "Please talk to me baby on 50000 one more time.".
 
+Der Port muss sich hierbei im Wertebereich von 50000 - 59999 befinden.
 Der Erhalt wird durch die Öffnung der TCP Verbindung bestätigt. Wird keine
 Verbindung geöffnet, so wird maximal 3 mal die UDP Nachricht versandt, bevor der
 Verbindungsaufbau vollständig abgebrochen wird.
