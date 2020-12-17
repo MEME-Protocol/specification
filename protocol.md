@@ -39,7 +39,8 @@ Die `register` Nachricht ist wie folgt aufgebaut.
 ```
 
 Der `port` muss hierbei im Wertebereich 50000–60000 liegen. Sonst wird die
-Nachricht ignoriert. Die IP muss korrekt formatiert sein.
+Nachricht ignoriert. Die IP muss korrekt formatiert sein. 
+Der 'nickname' muss hierbei auf dem Server eindeutig sein. Falls dieser schon vorhanden ist, wird die Nachricht ebenfalls ignoriert.
 
 ## Unregister Nachricht
 
