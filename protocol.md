@@ -108,6 +108,7 @@ Verbindungsaufbau vollständig abgebrochen wird.
 ```json
 {
   "type": "message",
+  "from": "asdf",
   "message": "Hey, I'm talking to you over MEME."
 }
 ```
@@ -119,6 +120,7 @@ Der Broadcast wird an den Server per TCP gesendet.
 ```json
 {
   "type": "broadcast",
+  "from": "asdf",
   "message": "MEME is such a cool protocol!!11!!!"
 }
 ```
